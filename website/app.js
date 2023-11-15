@@ -23,19 +23,6 @@ app.get('/', (req, res) => {
 }
 );
 
-app.get('/about', (req, res) => {
-    res.sendFile('./views/about.html', { root: __dirname });
-    log(req, res);
-}
-);
-
-
-// redirects
-app.get('/about-us', (req, res) => {
-    res.redirect('/about');
-    console.log(req.ip + ' ' + new Date().toLocaleString() + ' ' + req.url);
-    log(req, res);
-});
 
 // 404 page
 app.use((req, res) => {
