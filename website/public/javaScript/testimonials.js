@@ -15,4 +15,3 @@ async function loadRandomTestimonial() {
 } 
 
 document.addEventListener('DOMContentLoaded', loadRandomTestimonial); // Load a random testimonial when the page loads
-

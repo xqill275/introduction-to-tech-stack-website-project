@@ -23,6 +23,12 @@ app.get('/', (req, res) => {
 }
 );
 
+app.get('/loginRegister', (req, res) => { 
+    res.sendFile('./views/loginRegister.html',{root: __dirname });
+    log(req, res);
+}
+);
+
 // 404 page
 app.use((req, res) => {
     res.status(404).sendFile('./views/404.html', { root: __dirname });

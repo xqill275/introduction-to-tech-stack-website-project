@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="./css/loginRegister.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="login-container" style="display: block;">
+        <h2>Login</h2>
+        <form action="login" method="post" id="loginForm">
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <input type="button" value="Login" onclick="login()">
+        </form>
+        <a href="/forgotPassword">Forgot Password?</a>
+        <br>
+        <button onclick="showReg()"><p> dont have an account? </p></button>
+    </div>
+
+    <div id="register-container" style="display: none">
+        <h2>Register</h2>
+        <h2> are you a student or lecturer</h2>
+        <form action="register" method="post" id="registerForm">
+            <input type="radio" name="userType" value="student"  required>Student
+            <input type="radio" name="userType" value="lecturer" required>Lecturer
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="button" value="Register" onclick="Register()">
+        </form>
+    </div>
+    <script src="./javaScript/loginRegister.js"></script>
+</body>
+</html>
+
