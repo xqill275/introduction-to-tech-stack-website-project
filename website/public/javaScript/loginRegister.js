@@ -7,18 +7,26 @@ function showReg(){
 }
 
 function login(){
-    fetch("./files/myText.txt").then((res) => res.text()).then((text) => { // Fetch the data
-        var fileText = text.split(""); // split the data into an array of characters
-        var ValidLogin = fixArray(fileText);  // fix the array
-        var username = document.getElementById("username").value; // get the username
-        var password = document.getElementById("password").value; // get the password
-        if (ValidLogin[0] == username && ValidLogin[1] == password){ // check if the username and password are correct
-            console.log("login successful"); // log to the console
+    fetch("./files/myText.txt").then((res) => res.text()).then((text) => { 
+        var fileText = text.split("");
+        var ValidLogin = fixArray(fileText);  
+        var username = document.getElementById("username").value; 
+        var password = document.getElementById("password").value; 
+        console.log(username); 
+        if (ValidLogin.includes(username)){ 
+            var userIndex = ValidLogin.indexOf(username);  
+            console.log(userIndex); 
+            if (password == ValidLogin[userIndex+1]){ 
+                alert("logged in as " + username);  
+            }
+            else{
+                alert("Incorrect Username or Password");  
+            }
         }
         else{
-            console.log("login failed"); // log to the console
+            alert("Incorrect Username or Password");
         }
-    }).catch((e) => console.error(e)); // catch any errors
+    }).catch((e) => console.error(e)); 
 } 
 
 function fixArray(array) { 
