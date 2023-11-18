@@ -1,4 +1,8 @@
 testuser
 1234
+student
 testuser2
 5678
+registeruser
+thisisthepassword
+lecturer
