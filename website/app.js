@@ -44,7 +44,7 @@ app.post('/writeToFile', express.json(), (req, res) => {
     for (let i = 0; i < text.length; i++) {
         console.log(text[i]);
 
-        // Check if the current element is at index 1 and has value 'student' or 'lecturer' to fix an error where the user title and user password were being swapped
+        // Check if the current element is at index 1 and has value 'student' or 'lecturer' (this is to fix an error fix an where the user title and user password were being swapped
         if (i === 1 && (text[i] === 'student' || text[i] === 'lecturer')) {
             // Store values and append them to corresponding files
             const storeTitle = text[i];
@@ -66,6 +66,13 @@ app.post('/writeToFile', express.json(), (req, res) => {
 
     // Send 'ok' as the response
     res.send('ok');
+    // Log the request details
+    log(req, res);
+});
+
+app.get('/studentUserPage', (req, res) => {
+    // Send the 'studentUserPage.html' file as the response
+    res.sendFile('./views/studentUserPage.html', { root: __dirname });
     // Log the request details
     log(req, res);
 });

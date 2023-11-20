@@ -33,6 +33,7 @@ function login() {
                 // Check if the user is a student or lecturer and log them in
                 var studentOrLecturer = validLogin[userIndex + 2];
                 alert("Logged in as " + username + " and they are a " + studentOrLecturer);
+                window.location.href = "/studentUserPage";
             } else {
                 alert("Incorrect Username or Password");
             }

@@ -6,3 +6,6 @@ testuser2
 registeruser
 thisisthepassword
 lecturer
+pixel
+pixeliscool
+student
