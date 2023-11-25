@@ -77,6 +77,13 @@ app.get('/studentUserPage', (req, res) => {
     log(req, res);
 });
 
+app.get('/jobBoard', (req, res) => {
+    // Send the 'studentUserPage.html' file as the response
+    res.sendFile('./views/jobBoard.html', { root: __dirname });
+    // Log the request details
+    log(req, res);
+});
+
 // Handle 404 errors by sending the '404.html' file as the response
 app.use((req, res) => {
     res.status(404).sendFile('./views/404.html', { root: __dirname });

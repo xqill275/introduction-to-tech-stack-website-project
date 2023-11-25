@@ -9,3 +9,15 @@ lecturer
 pixel
 pixeliscool
 student
+oliveriscool
+1234
+lecturer
+oliveriscool1
+1234
+lecturer
+oliveriscool2
+1234
+lecturer
+JohnDoe123
+1234
+lecturer

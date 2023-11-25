@@ -3,9 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>student user page</title>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .profilePic {
+            text-align: center;
+        }
+
+        .profilePic img {
+            width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .displayWorkHistory,
+        .displayEducationHistory,
+        .displaySkills {
+            margin-bottom: 20px;
+        }
+
+        .job {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<body>
-    <h1> user page </h1>
+<body class="container mt-4">
+
+    <h1>User Profile</h1>
+
+    <div class="profilePic">
+        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+        <div class="displayWorkHistory">
+            <h2>Work History</h2>
+            <p>Work History</p>
+        </div>
+        <div class="displayEducationHistory">
+            <h2>Education History</h2>
+            <p>Education History</p>
+        </div>
+        <div class="displaySkills">
+            <h2>Skills</h2>
+            <p>Skills</p>
+        </div>
+    </div>
+
+    <button id="editProfile" class="btn btn-primary" onclick="editProfile()">Edit Profile</button>
+
+    <form action="/update-profile" method="POST" enctype="multipart/form-data" style="display: none;">
+        <label for="profilePic">Profile Picture:</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*" class="form-control-file">
+        <br>
+
+        <label for="workHistory">Work History:</label>
+        <textarea id="workHistory" name="workHistory" rows="4" cols="50" class="form-control"></textarea>
+        <br>
+
+        <label for="educationHistory">Education History:</label>
+        <textarea id="educationHistory" name="educationHistory" rows="4" cols="50" class="form-control"></textarea>
+        <br>
+
+        <label for="skills">Skills:</label>
+        <input type="text" id="skills" name="skills" class="form-control">
+        <br>
+
+        <input type="submit" value="Save" class="btn btn-primary">
+    </form>
+
+    <div class="jobBoard">
+        <h2>Job Board</h2>
+
+        <!-- Job 1 -->
+        <div class="job">
+            <h3>Software Developer</h3>
+            <p>Exciting opportunity for a skilled software developer to join our dynamic team.</p>
+            <p>Pay: £45,000 per year</p>
+            <p>Location: London, UK</p>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job">
+            <h3>Marketing Specialist</h3>
+            <p>Join our marketing team and help us reach new heights in customer engagement.</p>
+            <p>Pay: £50,000 per year</p>
+            <p>Location: Manchester, UK</p>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job">
+            <h3>Data Analyst</h3>
+            <p>Analyze data trends and provide valuable insights to support business decisions.</p>
+            <p>Pay: £40,000 per year</p>
+            <p>Location: Edinburgh, UK</p>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job">
+            <h3>UX/UI Designer</h3>
+            <p>Create intuitive and visually appealing user experiences for our products.</p>
+            <p>Pay: £48,000 per year</p>
+            <p>Location: Bristol, UK</p>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="job">
+            <h3>Financial Analyst</h3>
+            <p>Analyze financial data and provide insights for strategic decision-making.</p>
+            <p>Pay: £55,000 per year</p>
+            <p>Location: Birmingham, UK</p>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+
+        <!-- Job 6 -->
+        <div class="job">
+            <h3>Customer Support Representative</h3>
+            <p>Assist customers with product inquiries and provide excellent service.</p>
+            <p>Pay: £30,000 per year</p>
+            <p>Location: Cardiff, UK</p>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+    </div>
+
+    <script>
+        function editProfile() {
+            var form = document.querySelector("form");
+            var editProfileBtn = document.getElementById("editProfile");
+
+            if (form.style.display === "block") {
+                form.style.display = "none";
+                editProfileBtn.innerHTML = "Edit Profile";
+            } else {
+                form.style.display = "block";
+                editProfileBtn.innerHTML = "Stop Editing";
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>

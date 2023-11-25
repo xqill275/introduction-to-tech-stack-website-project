@@ -84,6 +84,7 @@ function register() {
         if (text.includes(username)) {
             alert("Username already taken");
         } else {
+            alert("Registered as " + username + " and they are a " + userType)
             var fileText = [username, password, userType];
             writeToFile(fileText, "./public/files/myText.txt");
         }
