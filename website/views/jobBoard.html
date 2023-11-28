@@ -10,12 +10,19 @@
 
 <div class="container mt-4">
     <h1 class="mb-4">Job Board</h1>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search for a job..." id="jobSearch">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="searchJobs()">Search</button>
+        </div>
+    </div>
     <a href="/"><button class="btn btn-primary mb-4">home</button></a>
-
+</div>
+<div class="container" id="jobList">
     <div class="row">
         <!-- Job 1 -->
         <div class="col-md-4">
-            <div class="card">
+            <div class="card" id="SoftwareDeveloper">
                 <div class="card-body">
                     <h5 class="card-title">Software Developer</h5>
                     <p class="card-text">Description: Exciting opportunity for a skilled software developer to join our dynamic team.</p>
@@ -28,7 +35,7 @@
 
         <!-- Job 2 -->
         <div class="col-md-4">
-            <div class="card">
+            <div class="card" id="MarketingSpecialist">
                 <div class="card-body">
                     <h5 class="card-title">Marketing Specialist</h5>
                     <p class="card-text">Description: Join our marketing team and help us reach new heights in customer engagement.</p>
@@ -41,7 +48,7 @@
 
         <!-- Job 3 -->
         <div class="col-md-4">
-            <div class="card">
+            <div class="card" id="DataAnalyst">
                 <div class="card-body">
                     <h5 class="card-title">Data Analyst</h5>
                     <p class="card-text">Description: Analyze data trends and provide valuable insights to support business decisions.</p>
@@ -54,7 +61,7 @@
 
         <!-- Job 4 -->
         <div class="col-md-4">
-            <div class="card">
+            <div class="card" id="UXUIDesigner">
                 <div class="card-body">
                     <h5 class="card-title">UX/UI Designer</h5>
                     <p class="card-text">Description: Create intuitive and visually appealing user experiences for our products.</p>
@@ -67,7 +74,7 @@
 
         <!-- Job 5 -->
         <div class="col-md-4">
-            <div class="card">
+            <div class="card" id="FinancialAnalyst">
                 <div class="card-body">
                     <h5 class="card-title">Financial Analyst</h5>
                     <p class="card-text">Description: Analyze financial data and provide insights for strategic decision-making.</p>
@@ -80,7 +87,7 @@
 
         <!-- Job 6 -->
         <div class="col-md-4">
-            <div class="card">
+            <div class="card" id="CustomerSupportRepresentative">
                 <div class="card-body">
                     <h5 class="card-title">Customer Support Representative</h5>
                     <p class="card-text">Description: Assist customers with product inquiries and provide excellent service.</p>
@@ -92,7 +99,7 @@
         </div>
     </div>
 </div>
-
+<script src="./javaScript/jobSearch.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
