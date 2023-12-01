@@ -19,3 +19,20 @@ async function loadRandomTestimonial() {
 
 // Load a random testimonial when the DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', loadRandomTestimonial);
+
+
+window.onload = function () {
+    var button = document.getElementById("UserButton");
+    console.log(button);
+    if (document.cookie == "") {
+        button.style.display = "none";
+    } else {
+        button.style.display = "block";
+        if (document.cookie == "UserType=student") {
+            button.setAttribute("href", "/studentUserPage");
+        } else if (document.cookie == "UserType=lecturer") {
+            button.setAttribute("href", "/lecturerUserPage");
+        }
+    }
+}
+

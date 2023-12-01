@@ -77,6 +77,13 @@ app.get('/studentUserPage', (req, res) => {
     log(req, res);
 });
 
+app.get('/lecturerUserPage', (req, res) => {
+    // Send the 'studentUserPage.html' file as the response
+    res.sendFile('./views/lecturerUserPage.html', { root: __dirname });
+    // Log the request details
+    log(req, res);
+});
+
 app.get('/jobBoard', (req, res) => {
     // Send the 'studentUserPage.html' file as the response
     res.sendFile('./views/jobBoard.html', { root: __dirname });

@@ -1,3 +1,4 @@
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // Delete the cookie
 // Function to show the registration form and hide the login form
 function showReg() {
     var register = document.getElementById("register-container");
@@ -33,7 +34,16 @@ function login() {
                 // Check if the user is a student or lecturer and log them in
                 var studentOrLecturer = validLogin[userIndex + 2];
                 alert("Logged in as " + username + " and they are a " + studentOrLecturer);
-                window.location.href = "/studentUserPage";
+                if (studentOrLecturer == "lecturer") {
+                    document.cookie = "type=lecturer";
+                } else {
+                    document.cookie = "type=student";
+                }
+                if (studentOrLecturer == "lecturer") {
+                    window.location.href = "./lecturerUserPage";
+                } else {
+                    window.location.href = "./studentUserPage";
+                }                
             } else {
                 alert("Incorrect Username or Password");
             }
@@ -106,3 +116,4 @@ function writeToFile(text, file) {
         })
         .catch((error) => console.error('Error:', error)); // Log any errors
 }
+

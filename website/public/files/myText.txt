@@ -24,3 +24,6 @@ lecturer
 aaa
 1234
 lecturer
+hello
+1234
+student

@@ -16,10 +16,32 @@
             <button class="btn btn-outline-secondary" type="button" onclick="searchJobs()">Search</button>
         </div>
     </div>
+    <button class="btn btn-primary mb-4" onclick="createJob()" style="display: none" id="createJob">Create Job</button>
+    <div class="createJob">
+        <form style="display: none;" onsubmit="submitJob(); return false">
+            <div class="form-group">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" class="form-control" id="jobTitle" placeholder="Enter job title">
+            </div>
+            <div class="form-group">
+                <label for="jobDescription">Job Description</label>
+                <textarea class="form-control" id="jobDescription" rows="3" placeholder="Enter job description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="jobPay">Job Pay</label>
+                <input type="text" class="form-control" id="jobPay" placeholder="Enter job pay">
+            </div>
+            <div class="form-group">
+                <label for="jobLocation">Job Location</label>
+                <input type="text" class="form-control" id="jobLocation" placeholder="Enter job location">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
     <a href="/"><button class="btn btn-primary mb-4">home</button></a>
 </div>
 <div class="container" id="jobList">
-    <div class="row">
+    <div class="row" id="row">
         <!-- Job 1 -->
         <div class="col-md-4">
             <div class="card" id="SoftwareDeveloper">
