@@ -1,20 +1,21 @@
 # Project Overview
 
 ## Project Goals and Objectives
-My main goals for this project were to create the Minimal Viable Product (MVP). Anything extra could be added onto the project once this crucial step was reached, and I was happy with it. The Most important pages to create first was the main home page, the job board and the user pages once these where done I then created a working login page and an more minor features to the other pages such as the testimonial loading with the home page
+My main goals for this project were to create the Minimal Viable Product (MVP). Anything extra could be added onto the project once this crucial step was reached, and I was happy with it. The most important pages to create first were the main home page, the job board, and the user pages. Once these were done, I then created a working login page and some minor features for the other pages, such as the testimonial loading with the home page.
 
 ## Installation instructions
-The only dependancy for this project is Node.js this is used for my backend, to install node.js please visit this page:
+The only dependency for this project is Node.js. To install Node.js, please visit this page:
 ```
 https://nodejs.org/en/download
 ```
-Select the version for your operating system and follow the instructionts the installer show you, I do use the exspress package but as you will pull this repo down it is already installed and configured.
-now that node.js is installed you now need to download this repo onto your system, you can do this by either 1. clicking the code button on the top right hand side then 2. clicking one of the download buttonts or you can git this down by:
+Select the version for your operating system and follow the instructions the installer shows you. I use the Express package, but as you pull this repo down, it is already installed and configured.
 
+Now that Node.js is installed, download this repo onto your system. You can do this by either:
+Clicking the code button on the top right-hand side, then Clicking one of the download buttons, or you can git this down by:
 ```
 git clone https://github.com/xqill275/introduction-to-tech-stack-website-project
 ```
-now once you have a copy of my project onto your computer, to start the website:
+Once you have a copy of my project on your computer, to start the website:
 
 1. enter the website folder:
 
@@ -26,56 +27,69 @@ for mac and linux:
 ```
 cd /website
 ```
-2. now you need to launch the app.js file with node.js to do this simply enter:
+Now, you need to launch the app.js file with Node.js. To do this, simply enter:
 ```
 node .\app.js
 ```
-3. now that you have launched this you should see the text:
+Now that you have launched this, you should see the text:
 ```
 Listening for requests on port 3000
 ```
-if you see this that means that the website is now being hosted on your localhost on port 3000
-now goto your browser of choice and search for the website:
+If you see this, it means that the website is now being hosted on your localhost on port 3000. Now, go to your browser of choice and search for the website:
 ```
 http://localhost:3000/
 ```
 
 ## Project Plan
-I talked a little bit about this in 'Project Goals and Objectives' section of this readme file while developing this project I wanted to do the most important and time consuming features first, I also implemented the pages based on I as a user would interact with a webpage.
+I discussed this in the 'Project Goals and Objectives' section of this readme file. While developing this project, I focused on the most important and time-consuming features first. I implemented the pages based on how I, as a user, would interact with a webpage.
 
-1. the home page and 404 page (started: 14/11 finsihed: 15/11) :
+1. The home page and 404 page (started: 14/11, finished: 15/11):
 
-  this is the first part of the project that I worked on as I belive that it is the most important part of any webpage espacially if it's for a busissness for instance if a user likes how the webpage looks they are more     likely to put trust into the website so if they are willing to purchase any products, they will feel more confident entering there card details
+This is the first part of the project that I worked on because I believe it is the most important part of any webpage. Especially for a business, if a user likes how the webpage looks, they are more likely to trust the website. This trust can lead to them making purchases, feeling confident in entering their card details.
 
-2. Login page (started 15/11 finsihed: 18/11):
+2. Login page (started 15/11, finished: 18/11):
 
-  now that the homepage is done I started to work on the login and registration page. For this project we didn't need to do the backend only the front end but I wanted to teach my self node.js so I spent longer on this page then I intened to but it does work you can register and login into that account as both an student and a lecture.
+Now that the homepage is done, I started to work on the login and registration page. For this project, we didn't need to handle the backend, only the frontend. However, I wanted to teach myself Node.js, so I spent more time on this page than intended. It works; you can register and login into that account as both a student and a lecturer.
 
-3. student user page (started: 20/11 finsihed 20/11):
+3. Student user page (started: 20/11, finished 20/11):
 
-   now that the login and registeration page was done, the user need someone where to go once they had logged in so the next part of the website I worked on was the student user page. This wasnt as hard as I was thinking it was going to be as all I had was give the user a form for the new infomation such as: profile pic, work history, education history etc then use some javascript to replace the old text with the new text
+Now that the login and registration page were done, the user needed somewhere to go once they had logged in. The next part of the website I worked on was the student user page. This wasn't as challenging as I thought it would be. All I had to do was give the user a form for new information such as a profile picture, work history, education history, etc. Then use some JavaScript to replace the old text with the new text.
 
-4. job board (started 25/11 finsihed: 1/12):
-This part of the website took the longest complete as I also wanted to learn about cookies and how they worked as I only wanted lectures to be able to post new jobs. so as the user logins into an account as a lecuter it will store the type of user they are. so when they goto the jobboard page the webpage will check the cookie for the type and if the type is lecutre it will display a button for the user to create a new job. the jobboard also took a while as I wanted to add a working search bar so the user could search thrpugh all the avalive jobs.
+4.Job board (started 25/11, finished: 1/12):
 
-5. Lecture user page (started: 1/12 finsihed 1/12):
+This part of the website took the longest to complete. I also wanted to learn about cookies and how they worked because I only wanted lecturers to be able to post new jobs. As the user logs into an account as a lecturer, it will store the type of user they are. So, when they go to the job board page, the webpage will check the cookie for the type, and if the type is 'lecturer,' it will display a button for the user to create a new job. The job board also took a while because I wanted to add a working search bar so the user could search through all available jobs.
 
-   the lecture user page was very simple as I had already done the hard work with the student user page so I could re-use most of it. all i had to do was changed the fields to fit for the lecture page
+6. Lecture user page (started: 1/12, finished 1/12):
+
+The lecture user page was straightforward as I had already done the hard work with the student user page. I could reuse most of it. All I had to do was change the fields to fit for the lecture page.
 
 ## Choice of Tech Stack and Architecture
 
 ### Technologies Used
 
-This project was built using a very simple tech stack, HTML, CSS, JavaScript, and Node.js:
+This project was built using a simple tech stack: HTML, CSS, JavaScript, and Node.js:
 
 - **HTML and CSS:**
-  - HTML and CSS was used to structure and style the webpage 
+  - HTML and CSS were used to structure and style the webpage.
 
 - **JavaScript:**
-  - javascript was mostly used for the functionalty ofd the site such as the testimonials and the creating of job postings 
+  - JavaScript was mostly used for the functionality of the site, such as testimonials and creating job postings.
 
 - **Node.js:**
-  - I used node.js for my backend, it allowed me to run server side code that was used for managering requests and the editing and reading of files on the host computer
+  - I used Node.js for my backend. It allowed me to run server-side code used for managing requests and editing/reading files on the host computer.
+ 
+
+  
+ 
+## Future considerations for scaling
+In the future, one of the main aspects that I would like to get working is persistence, especially with the job board. Currently, once you refresh the jobs you have created, they get wiped. Another instance is the user profiles; any data you enter will be wiped once you refresh the page. The way I would probably implement this is by using a database that stores all the job data. Then, whenever a new job gets added, we can just update that database.
+
+I would also love to make the login and register more secure. Currently, you could change your cookie to be a different type, then you get all the benefits of being logged in. The way I'm currently storing passwords and usernames is also very insecure as they are all in plain text. I would like to implement a database and hashing of the passwords.
+
+## Risk Assessment
+As mentioned, the biggest risks of my website currently revolve around data loss and security. Data loss is a concern, especially with the current setup where jobs and user profiles are not persistently stored. Implementing a database will significantly mitigate this risk, ensuring that valuable information remains intact even after page refreshes.
+
+Security is another crucial area of concern. The current practice of storing passwords and usernames in plain text poses a significant threat to user accounts. Hashing passwords and storing them securely in a database will be a critical step towards improving the overall security posture of the website. It's essential to address these risks proactively to ensure a robust and reliable user experience.
 
 ## In-code documentation for key functions and components
 
@@ -101,7 +115,7 @@ async function loadRandomTestimonial() {
 }
 
 ```
-these functiontions get a random testimonial from a json file and then find the part of the website with the id of testimonialText and replace it with the new quote 
+These functions get a random testimonial from a JSON file and then find the part of the website with the ID of testimonialText and replace it with the new quote.
 
 **REGISTER**
  ```js
@@ -128,7 +142,7 @@ function register() {
     }).catch((e) => console.error(e));
 }
 ```
-When the user registers it first gets all the inputted text and stores them to variables, it then checks if the user wants to be a student or lecture it finally checks if the username is already taken if it is not it stores all the important info into an array and calls the writeToFile function
+When the user registers, it first gets all the inputted text and stores them to variables. It then checks if the user wants to be a student or lecturer. Finally, it checks if the username is already taken. If it is not, it stores all the important info into an array and calls the writeToFile function.
 
  ```js
 function writeToFile(text, file) {
@@ -147,7 +161,7 @@ function writeToFile(text, file) {
 }
 ```
 
-this simply takes the array given and then makes a request to the webserver to edit the file with the new user
+This simply takes the array given and then makes a request to the web server to edit the file with the new user.
 
  ```js
 // Handle POST requests for the '/writeToFile' URL
@@ -186,9 +200,7 @@ app.post('/writeToFile', express.json(), (req, res) => {
 });
 
 ```
-this is inside my app.js file when the user makes a request to /writeToFile it will exstract the text array from the request then loop through it and add the data to the myText.txt file
-
-once these are done the user now has an account of their own
+This is inside my app.js file when the user makes a request to /writeToFile. It will extract the text array from the request, then loop through it and add the data to the myText.txt file. Once these are done, the user now has an account of their own.
 
 **LOG IN**
 
@@ -235,7 +247,7 @@ function login() {
     }).catch((e) => console.error(e));
 }
 ```
-once the user enters there username and password on the website it calls this function, it gets the data on the myText.txt file and puts it into an array it then fixes the array format by calling the fixArray function, it then gets the data inputed and store them into variables. it then checks if the username is in the file and if it is it stores the index of that username, it then checks if the password is the same as the next index. if that is also true it stores the type of user to the cookies. it then checks these cookies and then send you to the corrisponding userpage
+Once the user enters their username and password on the website, it calls this function. It gets the data on the myText.txt file and puts it into an array. It then fixes the array format by calling the fixArray function. It then gets the data inputted and stores them into variables. It then checks if the username is in the file and if it is, it stores the index of that username. It then checks if the password is the same as the next index. If that is also true, it stores the type of user to the cookies. It then checks these cookies and then sends you to the corresponding user page.
 
  ```js
 
@@ -269,7 +281,7 @@ function updateProfile(event) {
 
 ```
 
-to edit the users profiles it is very simple, it just takes the entered infomation from the form and then replaces the placeholder text with the new text 
+To edit the users' profiles, it is straightforward. The editProfile function toggles the display of the form, and the updateProfile function prevents the default form submission behavior. It retrieves the entered information from the form and replaces the placeholder text with the new text.
 
 **POST A JOB**
 
@@ -317,7 +329,7 @@ function submitJob(event) {
 }
 
 ```
-This function is used when a user wants to create a new job posting like the profile edit function it just takes the form data and then creates a new div to create the new job. it also checks if all the fields are felid in and if it is not it asks them to fill them in
+This function is used when a user wants to create a new job posting. Similar to the profile edit function, it takes the form data and creates a new div to represent the new job. It also checks if all the fields are filled in, and if not, it prompts the user to fill them in.
 
 **JOB BOARD SEARCH**
  ```js
@@ -340,4 +352,4 @@ function searchJobs() {
 }
 ```
 
-This is function is how the search bar works it gets the input and makes it upper case so we dont have worry about capital letters, it then loops through all of the cards if the search matches it sets the card style to be block and if it dosent match it makes the card style none which hides it 
+This function is responsible for how the search bar works. It retrieves the input and converts it to uppercase to avoid case sensitivity. It then loops through all the cards. If the search matches, it sets the card style to "block," and if it doesn't match or the search is empty, it sets the card style to "none" to hide it. This modification simplifies the logic by combining the conditions for displaying the card
