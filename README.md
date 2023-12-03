@@ -187,7 +187,7 @@ app.post('/writeToFile', express.json(), (req, res) => {
             // Break out of the loop
             break;
         }
-        // Append the current element to the specified file
+        // Append the current element to the  file
         fs.appendFile(file, text[i] + '\r\n', (err) => {
             if (err) throw err;
         });
@@ -322,8 +322,7 @@ function submitJob(event) {
 
     document.querySelector("form").reset();
 
-    createJob(); // Optional: Close the form after submission
-
+    createJob(); 
     
 
 }
