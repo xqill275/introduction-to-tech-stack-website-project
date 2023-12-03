@@ -236,3 +236,37 @@ function login() {
 }
 ```
 once the user enters there username and password on the website it calls this function, it gets the data on the myText.txt file and puts it into an array it then fixes the array format by calling the fixArray function, it then gets the data inputed and store them into variables. it then checks if the username is in the file and if it is it stores the index of that username, it then checks if the password is the same as the next index. if that is also true it stores the type of user to the cookies. it then checks these cookies and then send you to the corrisponding userpage
+
+ ```js
+
+function editProfile() {
+    var form = document.querySelector("form");
+    var editProfileBtn = document.getElementById("editProfile");
+
+    if (form.style.display === "block") {
+        form.style.display = "none";
+        editProfileBtn.innerHTML = "Edit Profile";
+    } else {
+        form.style.display = "block";
+        editProfileBtn.innerHTML = "Stop Editing";
+    }
+}
+
+function updateProfile(event) {
+    event.preventDefault(); // Prevents the default form submission behavior
+
+    var newWorkHistory = document.getElementById("workHistory").value;
+    var newEducationHistory = document.getElementById("educationHistory").value;
+    var newSkills = document.getElementById("skills").value;
+    var workHistoryText = document.getElementById("workHistoryText");
+    var educationHistoryText = document.getElementById("educationHistoryText");
+    var skillsText = document.getElementById("skillsText");
+
+    workHistoryText.innerHTML = newWorkHistory;
+    educationHistoryText.innerHTML = newEducationHistory;
+    skillsText.innerHTML = newSkills;
+}
+
+```
+
+to edit the users profiles it is very simple, it just takes the entered infomation from the form and then replaces the placeholder text with the new text 
