@@ -61,3 +61,20 @@ This part of the website took the longest complete as I also wanted to learn abo
 5. Lecture user page (started: 1/12 finsihed 1/12):
 
    the lecture user page was very simple as I had already done the hard work with the student user page so I could re-use most of it. all i had to do was changed the fields to fit for the lecture page
+
+## Choice of Tech Stack and Architecture
+
+### Technologies Used
+
+This project was built using a very simple tech stack, HTML, CSS, JavaScript, and Node.js:
+
+- **HTML and CSS:**
+  - HTML and CSS was used to structure and style the webpage 
+
+- **JavaScript:**
+  - javascript was mostly used for the functionalty ofd the site such as the testimonials and the creating of job postings 
+
+- **Node.js:**
+  - I used node.js for my backend, it allowed me to run server side code that was used for managering requests and the editing and reading of files on the host computer
+    
+
