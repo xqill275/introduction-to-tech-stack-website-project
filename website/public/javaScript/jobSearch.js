@@ -1,6 +1,4 @@
 
-
-
 function searchJobs() {
     var input = document.getElementById("jobSearch").value;
     var filter = input.toUpperCase();
