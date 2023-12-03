@@ -76,5 +76,163 @@ This project was built using a very simple tech stack, HTML, CSS, JavaScript, an
 
 - **Node.js:**
   - I used node.js for my backend, it allowed me to run server side code that was used for managering requests and the editing and reading of files on the host computer
-    
 
+## In-code documentation for key functions and components
+
+**Testimonials**
+ ```js
+// Function to asynchronously get testimonials from a JSON file
+async function getTestimonials() {
+    const response = await fetch('./json/testimonials.json'); // get the data
+    const testimonials = await response.json(); // Convert the data to JSON
+    return testimonials; // Return the data
+}
+
+// Function to load a random testimonial onto the page
+async function loadRandomTestimonial() {
+    const testimonials = await getTestimonials(); // Get the testimonials
+    const randomIndex = Math.floor(Math.random() * testimonials.length); // Get a random index
+    
+    const testimonialText = document.getElementById('testimonialText'); // Get the testimonial text element
+    const testimonial = testimonials[randomIndex]; // Get the testimonial at the random index
+
+    // Set the testimonial text using HTML with the name and quote from the testimonial
+    testimonialText.innerHTML = `<strong>${testimonial.name}</strong>: "${testimonial.quote}"`;
+}
+
+```
+these functiontions get a random testimonial from a json file and then find the part of the website with the id of testimonialText and replace it with the new quote 
+
+**REGISTER**
+ ```js
+// Function to handle the registration process
+function register() {
+    // Get the register form and important values
+    var registerForm = document.getElementById("registerForm");
+    var student = registerForm.elements[0].checked;
+    var username = registerForm.elements[3].value;
+    var password = registerForm.elements[4].value;
+
+    // Check if the user is a student or lecturer
+    var userType = student ? "student" : "lecturer";
+
+    // Check if the username is already taken, and if not, add the user to the file
+    fetch("./files/myText.txt").then((res) => res.text()).then((text) => {
+        if (text.includes(username)) {
+            alert("Username already taken");
+        } else {
+            alert("Registered as " + username + " and they are a " + userType)
+            var fileText = [username, password, userType];
+            writeToFile(fileText, "./public/files/myText.txt");
+        }
+    }).catch((e) => console.error(e));
+}
+```
+When the user registers it first gets all the inputted text and stores them to variables, it then checks if the user wants to be a student or lecture it finally checks if the username is already taken if it is not it stores all the important info into an array and calls the writeToFile function
+
+ ```js
+function writeToFile(text, file) {
+    fetch('http://localhost:3000/writeToFile', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text, file }), // Send the text and file to the server
+    })
+        .then((res) => res.text()) // Get the response
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => console.error('Error:', error)); // Log any errors
+}
+```
+
+this simply takes the array given and then makes a request to the webserver to edit the file with the new user
+
+ ```js
+// Handle POST requests for the '/writeToFile' URL
+app.post('/writeToFile', express.json(), (req, res) => {
+    // Extract 'text' and 'file' properties from the request body
+    const { text, file } = req.body;
+
+    // Iterate through the 'text' array
+    for (let i = 0; i < text.length; i++) {
+        console.log(text[i]);
+
+        // Check if the current element is at index 1 and has value 'student' or 'lecturer' (this is to fix an error fix an where the user title and user password were being swapped
+        if (i === 1 && (text[i] === 'student' || text[i] === 'lecturer')) {
+            // Store values and append them to the file
+            const storeTitle = text[i];
+            const storePassword = text[i + 1];
+            fs.appendFile(file, storePassword + '\r\n', (err) => {
+                if (err) throw err;
+            });
+            fs.appendFile(file, storeTitle + '\r\n', (err) => {
+                if (err) throw err;
+            });
+            // Break out of the loop
+            break;
+        }
+        // Append the current element to the specified file
+        fs.appendFile(file, text[i] + '\r\n', (err) => {
+            if (err) throw err;
+        });
+    }
+
+    // Send 'ok' as the response
+    res.send('ok');
+    // Log the request details
+    log(req, res);
+});
+
+```
+this is inside my app.js file when the user makes a request to /writeToFile it will exstract the text array from the request then loop through it and add the data to the myText.txt file
+
+once these are done the user now has an account of their own
+
+**LOG IN**
+
+ ```js
+function login() {
+    // Fetch the content of the 'myText.txt' file
+    fetch("./files/myText.txt").then((res) => res.text()).then((text) => {
+        // Split the file content into an array
+        var fileText = text.split("");
+        // Fix the array format
+        var validLogin = fixArray(fileText);
+
+        // Get the username and password from the login form
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        console.log(username);
+
+        // Check if the username is in the file
+        if (validLogin.includes(username)) {
+            // If it is, get the index of the username and check if the password is correct
+            var userIndex = validLogin.indexOf(username);
+            console.log(userIndex);
+            
+            if (password == validLogin[userIndex + 1]) {
+                // Check if the user is a student or lecturer and log them in
+                var studentOrLecturer = validLogin[userIndex + 2];
+                alert("Logged in as " + username + " and they are a " + studentOrLecturer);
+                if (studentOrLecturer == "lecturer") {
+                    document.cookie = "type=lecturer";
+                } else {
+                    document.cookie = "type=student";
+                }
+                if (studentOrLecturer == "lecturer") {
+                    window.location.href = "./lecturerUserPage";
+                } else {
+                    window.location.href = "./studentUserPage";
+                }                
+            } else {
+                alert("Incorrect Username or Password");
+            }
+        } else {
+            alert("Incorrect Username or Password");
+        }
+    }).catch((e) => console.error(e));
+}
+```
+once the user enters there username and password on the website it calls this function, it gets the data on the myText.txt file and puts it into an array it then fixes the array format by calling the fixArray function, it then gets the data inputed and store them into variables. it then checks if the username is in the file and if it is it stores the index of that username, it then checks if the password is the same as the next index. if that is also true it stores the type of user to the cookies. it then checks these cookies and then send you to the corrisponding userpage
