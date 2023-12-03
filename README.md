@@ -1,4 +1,7 @@
+# Oliver Long
+
 # Project Overview
+
 
 ## Project Goals and Objectives
 My main goals for this project were to create the Minimal Viable Product (MVP). Anything extra could be added onto the project once this crucial step was reached, and I was happy with it. The most important pages to create first were the main home page, the job board, and the user pages. Once these were done, I then created a working login page and some minor features for the other pages, such as the testimonial loading with the home page.
