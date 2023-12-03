@@ -1,6 +1,6 @@
-// Function to asynchronously fetch testimonials from a JSON file
+// Function to asynchronously get testimonials from a JSON file
 async function getTestimonials() {
-    const response = await fetch('./json/testimonials.json'); // Fetch the data
+    const response = await fetch('./json/testimonials.json'); // get the data
     const testimonials = await response.json(); // Convert the data to JSON
     return testimonials; // Return the data
 }
