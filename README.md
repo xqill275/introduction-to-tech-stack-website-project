@@ -92,7 +92,7 @@ I would also love to make the login and register more secure. Currently, you cou
 ## Risk Assessment
 As mentioned, the biggest risks of my website currently revolve around data loss and security. Data loss is a concern, especially with the current setup where jobs and user profiles are not persistently stored. Implementing a database will significantly mitigate this risk, ensuring that valuable information remains intact even after page refreshes.
 
-Security is another crucial area of concern. The current practice of storing passwords and usernames in plain text poses a significant threat to user accounts. Hashing passwords and storing them securely in a database will be a critical step towards improving the overall security posture of the website. It's essential to address these risks proactively to ensure a robust and reliable user experience.
+Security is another crucial area of concern. The current practice of storing passwords and usernames in plain text poses a significant threat to user accounts. Hashing passwords and storing them securely in a database will be a critical step towards improving the overall security of the website. It's essential to address these risks proactively to ensure a robust and reliable user experience.
 
 ## In-code documentation for key functions and components
 
@@ -354,4 +354,4 @@ function searchJobs() {
 }
 ```
 
-This function is responsible for how the search bar works. It retrieves the input and converts it to uppercase to avoid case sensitivity. It then loops through all the cards. If the search matches, it sets the card style to "block," and if it doesn't match or the search is empty, it sets the card style to "none" to hide it. This modification simplifies the logic by combining the conditions for displaying the card
+This function is responsible for how the search bar works. It retrieves the input and converts it to uppercase to avoid case sensitivity. It then loops through all the cards. If the search matches, it sets the card style to "block," and if it doesn't match or the search is empty, it sets the card style to "none" to hide it. 
